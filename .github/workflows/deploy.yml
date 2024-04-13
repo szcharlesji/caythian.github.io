@@ -15,7 +15,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Specify your Node.js version
+        node-version: '21'  # Specify your Node.js version
 
     - name: Install Dependencies
       run: npm install
@@ -28,3 +28,4 @@ jobs:
       with:
         branch: gh-pages  # Pushes the build to the gh-pages branch
         folder: build     # The folder the action should deploy
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use the secret token
